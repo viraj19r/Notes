@@ -6,12 +6,13 @@ To check the git version
 
 <br>
 
-Run the following commands with your information to set a default username and email when you’re going to save your work
+Setting a default username and email when saving your work is easy by using the commands below
 >```
 >git config --global user.name "FIRST_NAME LAST_NAME"
+>
 >git config --global user.email "MY_NAME@example.com"
 >```
-
+By default, **```git config```** will write to a local level if no configuration option is passed. Local level configuration is applied to the context repository git config gets invoked in.
 Change it for particular repo/local user instead of global user
 Set your username:
 >` git config user.name "FIRST_NAME LAST_NAME" `
@@ -20,45 +21,47 @@ Set your email address:
 >` git config user.email "MY_NAME@example.com" `
 
 Verify your configuration by displaying your configuration file:
->` cat .git/config `
+>**` cat .git/config `**
 
->` git config user.password "your password" ` (optional)
+>**` git config user.password "your password" `** (optional)
 
 <br>
 <br>
 
-### We’ll work with GitHub projects in two ways.
+### Github projects can be done in two ways.
 
 <br>
 
 ### Case-1 : Create a repository on Github, clone it to our computer and start working on it.(Recommended)
 
 Git cloning(clone the whole remote repo, also creates a folder named same as the repo name)
->`` git clone <repository path> ``
+>**`` git clone <repository path> ``**
 
 <br>
 
 View changes
->`` git status ``
-Short status
->`git status -s` 
+>**`` git status ``**
+
+For Short status we can use below command:
+>**`git status -s`** 
 
 <br>
 
 #### Add Changes
 Add a specific file or folder
->`` git add [FILENAME] [FILENAME] [...] ``
->`git commit -a [FILENAME] [...]`
-
+>```
+> git add [FILENAME] [FILENAME] [...]
+> git commit -a [FILENAME] [...]
+>```
 Add everything
 >`git add . `
 
 <br>
 
-Add commit
+Add commit:
 >`` git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT" ``
  
-Add and commit in one command
+Add and commit in one command:
 >`` git commit -am “Message” ``
 
 <br>
@@ -73,7 +76,7 @@ if remote name is origin then push changes to remote using
 <br>
 
 
-### Case 2 : Work on your project locally by creating files in our system then create the repository on GitHub and push it to remote.
+### Case 2 : Work on your project locally by creating files in your system then create the repository on GitHub and push it to remote.
 
 Convert a local directory into a repository
  `` git init ``
@@ -90,18 +93,20 @@ This creates a connection between our local repo and the remote repo on Github.
 
 <br>
 
-change our main branch name to any another name(by default **master** is main branch) - here in our case change it to **main**
+Change our main branch name to any another name(by default **master** is main branch) - here in our case change it to **main**
 >`git branch -M main`
 
 <br>
 
-Set the master branch to upstream(pushes the repo from local to github/remote)
->`` git push -u origin master `` Default branch is master, if we change the branch name to any other name then we have to use that name here instead of master
-
+Set the master branch to upstream (pushes the repo from local to github/remote)
+>```
+>git push -u origin master
+*Default branch is master, if we change the branch name to any other name then we have to use that name here instead of master*
 
 After executing this command, we can check whether we have successfully added the remote or not by the following command
 >`git remote`
-And if it outputs “origin” you’ve added the remote to your project.
+>
+>**And if it outputs “origin” you’ve added the remote to your project.**
 
 <br>
 
@@ -124,15 +129,19 @@ Revert changes
 
 ### Github push cheats
 To push on a specific branch
->`` git push <remote> <name-of-branch> `` (use remote = origin)
+>`` git push <remote> <name-of-branch> `` 
+>
+> ***Note***: *use remote = origin*
 
 Push all branches
 >`` git push --all ``
 
 Sends the committed changes of master branch to your remote repository
->`` git push [variable name] master ``
->`` git push [variable name] [branch] ``
-
+>```
+>  git push [variable name] master
+>
+>  git push [variable name] [branch]
+>```
 <br>
 <br>
 
@@ -173,9 +182,13 @@ To view remote branches only
 >`git branch -r`
 
 To rename a branch, run the command
->`` git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME ``
- Alternative:
->`` git branch --move OLD-BRANCH-NAME NEW-BRANCH-NAME ``
+>```
+> git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME
+>```
+>**Alternative:**
+>```
+>git branch --move OLD-BRANCH-NAME NEW-BRANCH-NAME
+>```
 
 Push the newly created branch on github :
 >`` git push origin [name_of_your_new_branch] ``
@@ -191,9 +204,9 @@ Add a new remote for your branch :
 <br>
 <br>
        
-### Reset to Head
- revert the changes(delete or modified) that just made and go back to the files that we had
-#### Hard reset to head
+## Reset to Head
+ Revert the changes(delete or modified) that just made and go back to the files that we had
+### Hard reset to head
 To hard reset files to HEAD on Git, use the “git reset” command with the “–hard” option and specify the HEAD
 >``  git reset --hard HEAD       (going back to HEAD) ``
 
@@ -213,7 +226,7 @@ The soft reset won’t alter the working directory and the index. As a consequen
 
 >`` git reset --soft HEAD~2     (going back two commits before HEAD) ``
 
-[More on head reset](https://devconnected.com/how-to-git-reset-to-head/#:~:text=To%20hard%20reset%20files%20to,option%20and%20specify%20the%20HEAD.&text=The%20purpose%20of%20the%20%E2%80%9Cgit,before%20HEAD%20and%20so%20on).)
+[More on head reset](https://devconnected.com/how-to-git-reset-to-head/#:~:text=To%20hard%20reset%20files%20to,option%20and%20specify%20the%20HEAD.&text=The%20purpose%20of%20the%20%E2%80%9Cgit,before%20HEAD%20and%20so%20on)
 
 ## Git stash command
 [Stash command](https://devconnected.com/how-to-git-stash-changes/)
@@ -222,11 +235,16 @@ The soft reset won’t alter the working directory and the index. As a consequen
  
 When we edit the remote branch and push from local then there is error we can ovecome it by doing
 
->`` git pull `` = it will update the local with the changes in the remote or we can forcefully push as ``` git push -f origin branch name```
+>`` git pull `` 
+> <br>The local files will be updated with the changes in the remote or we can use command to forcefully push: 
+> ``` git push -f origin branch name```
+<br>
 
 >`git pull` is the combination of two git commands - 
-- >`git fetch`(fetches all the history of changes or tracked branch from remote(github) to local)
-- >`git merge`(this will merge the local branch with remote branch)
+- >`git fetch` 
+  (fetches all the history of changes or tracked branch from remote(github) to local)
+
+- > `git merge` (this will merge the local branch with remote branch)
 
 
 
@@ -239,8 +257,8 @@ When we edit the remote branch and push from local then there is error we can ov
 - [Git and Github complete github repo](https://github.com/tiimgreen/github-cheat-sheet)
 - [Git cheatsheet pdf external](./Pdfs/Git-Cheat-Sheet.pdf)
 
-- [more on branches ](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
+- [More on Branches ](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches)
 
-- [more on branches from freecodecamp](https://forum.freecodecamp.org/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222)
+- [More on Branches from Freecodecamp](https://forum.freecodecamp.org/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222)
 
-- [more on branches from medium](https://medium.com/@paulrohan/everday-git-commands-you-will-use-as-a-developer-e84b4a327036)
+- [More on Branches from Medium](https://medium.com/@paulrohan/everday-git-commands-you-will-use-as-a-developer-e84b4a327036)
