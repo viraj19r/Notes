@@ -141,7 +141,7 @@ View your remote repositories
 
  <br>
 
-View differences
+#### View differences
 
 In order to compare two branches easily, you have to use the “git diff” command and provide the branch names separated by dots.  
 > `git diff [first branch]..[second branch]`  
