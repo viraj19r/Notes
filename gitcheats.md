@@ -99,7 +99,7 @@ if remote name is origin then push changes to remote using
 ### Case 2 : Work on your project locally by creating files in your system then create the repository on GitHub and push it to remote.
 
 Convert a local directory into a repository
-`git init`
+**`git init`**
 
 - Check status and then add and commit the changes
 
@@ -150,7 +150,7 @@ In order to compare two branches easily, you have to use the “git diff” comm
 
 > `git diff HEAD ./path/to/file`  
 > 
-> Omitting `HEAD` in the example above `git diff ./path/to/file` has the same effect.
+> Omitting **`HEAD`** in the example above **`git diff ./path/to/file`** has the same effect.
 > 
 
 <br>
@@ -166,9 +166,9 @@ Revert changes
 #### Git Ignore
  While sharing your code with others, there are often files or parts of your project, you do not want to share.  
 Examples - log files, temporary files, hidden files, personal files etc.  
-Git can specify which files or parts of your project should be ignored by Git using a `.gitignore` file.
+Git can specify which files or parts of your project should be ignored by Git using a **`.gitignore`** file.
 
-Git will not track files and folders specified in `.gitignore`. However, the `.gitignore` file itself is tracked by Git.
+Git will not track files and folders specified in **`.gitignore`**. However, the **`.gitignore`** file itself is tracked by Git.
 >
 
 #### Create .gitignore
@@ -308,7 +308,7 @@ The soft reset won’t alter the working directory and the index. As a consequen
 Git restore is used to restore or discard the uncommitted local changes of files.  
 Assume that you have done some changes in some files and then if you want to discard those local changes you can safely use git restore.
 
-Another use case is if you want to unstage a file you can use this command. In other words, it is used to undo the effects of `git add .`
+Another use case is if you want to unstage a file you can use this command. In other words, it is used to undo the effects of **`git add .`**
 
 **Usage**
 > `git restore <file_name> `  
@@ -321,7 +321,7 @@ Another use case is if you want to unstage a file you can use this command. In o
 
 Git stash is used in order to save all the changes done to the current working directory and to go back to the last commit done on the branch (also called HEAD).
 #### Create a stash
-The easiest way to create a git stash is to simply run the `git stash` command without any parameters.  
+The easiest way to create a git stash is to simply run the **`git stash`** command without any parameters.  
 As a consequence, all the changes staged for commit in your current working directory will be saved on the side for later use.
 #### Apply Git stashes
 Now that you have saved your Git stashes on the side, you might want to “take them out from the stack” and apply them to your current working directory.
